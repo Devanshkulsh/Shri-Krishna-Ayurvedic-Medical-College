@@ -1,13 +1,15 @@
+import { lazy, Suspense } from "react";
 import Hero from "../components/home/Hero";
 import Overview from "../components/home/Overview";
-import JourneyTimeline from "../components/home/JourneyTimeline";
-import FacilitiesCards from "../components/home/FacilitiesCards";
-import HospitalStats from "../components/home/HospitalStats";
-import GallerySection from "../components/home/GallerySection";
-import ChairmanMessage from "../components/home/ChairmanMessage";
-import Testimonials from "../components/home/Testimonials";
 import CourseSection from "../components/home/CourseSection";
-import ContactSection from "../components/home/ContactSection";
+
+const JourneyTimeline = lazy(() => import("../components/home/JourneyTimeline"));
+const FacilitiesCards = lazy(() => import("../components/home/FacilitiesCards"));
+const HospitalStats = lazy(() => import("../components/home/HospitalStats"));
+const GallerySection = lazy(() => import("../components/home/GallerySection"));
+const ChairmanMessage = lazy(() => import("../components/home/ChairmanMessage"));
+const Testimonials = lazy(() => import("../components/home/Testimonials"));
+const ContactSection = lazy(() => import("../components/home/ContactSection"));
 
 export default function Home() {
   return (
@@ -15,13 +17,15 @@ export default function Home() {
       <Hero />
       <Overview />
       <CourseSection />
-      <JourneyTimeline />
-      <HospitalStats />
-      <FacilitiesCards />
-      <Testimonials />
-      <ChairmanMessage />
-      <GallerySection />
-      <ContactSection />
+      <Suspense fallback={null}>
+        <JourneyTimeline />
+        <HospitalStats />
+        <FacilitiesCards />
+        <Testimonials />
+        <ChairmanMessage />
+        <GallerySection />
+        <ContactSection />
+      </Suspense>
     </div>
   );
 }

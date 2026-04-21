@@ -85,21 +85,26 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-primary/95 shadow-md backdrop-blur-md transition-all">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo Section */}
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-inner sm:h-12 sm:w-12">
             <img
               src="/logo.png"
               alt="Shri Krishna logo"
+              width="48"
+              height="48"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-full w-full rounded-full object-cover"
             />
           </div>
-          <div className="hidden min-w-0 flex-col md:flex">
-            <span className="text-lg font-bold leading-tight text-white">
+          <div className="flex min-w-0 flex-col justify-center">
+            <span className="block truncate text-base font-bold leading-tight text-white md:text-lg">
               Shri Krishna
             </span>
-            <span className="truncate text-xs font-medium text-accent">
+            <span className="block max-w-40 truncate text-[10px] font-medium text-accent sm:max-w-52 md:max-w-none md:text-xs">
               Ayurvedic Medical College & Hospital
             </span>
           </div>
@@ -140,7 +145,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="border-t border-white/20 bg-primary/95 px-4 pb-6 pt-3 backdrop-blur-md lg:hidden"
+            className="max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain border-t border-white/20 bg-primary/95 px-4 pb-6 pt-3 backdrop-blur-md sm:max-h-[calc(100dvh-5rem)] lg:hidden"
           >
             <div className="space-y-2 rounded-2xl border border-white/10 bg-white/4 p-2 shadow-2xl">
               {navigationMenu.map((item, idx) => (
@@ -166,7 +171,7 @@ export default function Navbar() {
                       <button
                         type="button"
                         aria-label={`Toggle ${item.name} submenu`}
-                        className="mr-2 rounded-lg p-2 text-white/80 transition-colors hover:bg-white/10 hover:text-accent"
+                        className="mr-2 flex items-center justify-center rounded-lg p-3 text-white/80 transition-colors hover:bg-white/10 hover:text-accent"
                         onClick={() =>
                           setOpenMobileDropdown(
                             openMobileDropdown === idx ? null : idx,
@@ -209,7 +214,7 @@ export default function Navbar() {
                               >
                                 <Link
                                   to={subItem.href}
-                                  className="block rounded-lg px-3 py-2 text-sm font-medium text-white/90 transition-all hover:bg-secondary/60 hover:pl-4 hover:text-accent"
+                                  className="block rounded-lg px-3 py-3 text-sm font-medium text-white/90 transition-all hover:bg-secondary/60 hover:pl-4 hover:text-accent"
                                   onClick={() => {
                                     setMobileMenuOpen(false);
                                     setOpenMobileDropdown(null);

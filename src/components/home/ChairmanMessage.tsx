@@ -12,7 +12,7 @@ const chairman = {
 
 export default function ChairmanMessage() {
   return (
-    <section className="relative overflow-hidden bg-dark py-24 text-white md:py-32">
+    <section className="relative overflow-hidden bg-dark py-16 text-white md:py-32">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(139,195,74,0.28),transparent_32%),radial-gradient(circle_at_90%_82%,rgba(15,175,59,0.25),transparent_30%)]" />
       {/* <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full border border-white/20" /> */}
       <div className="pointer-events-none absolute -right-20 bottom-10 h-48 w-48 rounded-4xl border border-white/15 bg-white/5 backdrop-blur-sm" />
@@ -25,7 +25,7 @@ export default function ChairmanMessage() {
           transition={{ duration: 0.6 }}
           className="lg:col-span-8"
         >
-          <div className="relative isolate overflow-hidden rounded-[2.25rem] border border-white/15 bg-white/10 p-8 shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-md md:p-12">
+          <div className="relative isolate overflow-hidden rounded-4xl border border-white/15 bg-white/10 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-8 md:rounded-[2.25rem] md:p-12">
             <div className="pointer-events-none absolute -top-16 right-10 h-40 w-40 rounded-full bg-secondary/20 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-20 left-4 h-44 w-44 rounded-full bg-primary/20 blur-3xl" />
 
@@ -34,11 +34,11 @@ export default function ChairmanMessage() {
               chairman Message
             </span>
 
-            <h2 className="mt-6 max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
+            <h2 className="mt-6 max-w-3xl text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-5xl">
               From The <span className="text-secondary">chairman's Desk</span>
             </h2>
 
-            <div className="mt-8 rounded-2xl border border-white/12 bg-black/20 p-6 md:p-8">
+            <div className="mt-8 rounded-2xl border border-white/12 bg-black/20 p-5 sm:p-6 md:p-8">
               <Quote className="h-7 w-7 text-secondary/90" />
               <p className="mt-4 text-base leading-relaxed text-white/90 md:text-lg">
                 {chairman.message}
@@ -59,8 +59,8 @@ export default function ChairmanMessage() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="lg:col-span-4"
         >
-          <div className="relative overflow-hidden rounded-4xl border border-white/15 bg-white/10 p-6 shadow-[0_20px_55px_rgba(0,0,0,0.35)] backdrop-blur-md">
-            <div className="relative mx-auto h-72 w-full max-w-70 overflow-hidden rounded-[1.8rem] border border-white/20 bg-[linear-gradient(160deg,rgba(15,175,59,0.35),rgba(0,0,0,0.3),rgba(139,195,74,0.35))]">
+          <div className="relative overflow-hidden rounded-4xl border border-white/15 bg-white/10 p-5 shadow-[0_20px_55px_rgba(0,0,0,0.35)] backdrop-blur-md sm:p-6">
+            <div className="relative mx-auto h-64 w-full max-w-70 overflow-hidden rounded-[1.8rem] border border-white/20 bg-[linear-gradient(160deg,rgba(15,175,59,0.35),rgba(0,0,0,0.3),rgba(139,195,74,0.35))] sm:h-72">
               <img
                 src={chairman.image}
                 alt={chairman.name}

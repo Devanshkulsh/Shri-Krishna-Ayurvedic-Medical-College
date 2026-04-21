@@ -102,7 +102,7 @@ const facilities: Facility[] = [
 
 export default function FacilitiesCards() {
   return (
-    <section className="relative overflow-hidden bg-light py-24">
+    <section className="relative overflow-hidden bg-light py-16 md:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_14%,rgba(15,175,59,0.12),transparent_30%),radial-gradient(circle_at_85%_90%,rgba(139,195,74,0.15),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -110,12 +110,12 @@ export default function FacilitiesCards() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="mb-14 text-center"
+          className="mb-12 text-center md:mb-14"
         >
           <span className="inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1 text-sm font-semibold uppercase tracking-wider text-primary">
             Campus Infrastructure
           </span>
-          <h2 className="mt-4 text-3xl font-bold text-dark md:text-5xl">
+          <h2 className="mt-4 text-2xl font-bold text-dark sm:text-3xl md:text-5xl">
             Our Facilities
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base text-dark/70 md:text-lg">
@@ -143,7 +143,7 @@ export default function FacilitiesCards() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-dark/60 via-dark/20 to-transparent" />
-                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
+                <h3 className="absolute right-4 bottom-4 left-4 text-lg font-bold text-white sm:text-xl">
                   {facility.title}
                 </h3>
               </div>

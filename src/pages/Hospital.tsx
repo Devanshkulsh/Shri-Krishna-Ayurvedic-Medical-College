@@ -13,7 +13,7 @@ export default function Hospital() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative flex h-[80vh] min-h-[600px] w-full items-center justify-center overflow-hidden bg-dark">
+      <section className="relative flex min-h-[28rem] w-full items-center justify-center overflow-hidden bg-dark pt-18 sm:min-h-[34rem] sm:pt-20 lg:h-[80vh] lg:min-h-[600px] lg:pt-0">
         <motion.div 
           className="absolute inset-0 z-0"
           style={{ y: yBg }}
@@ -33,11 +33,11 @@ export default function Hospital() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="max-w-3xl"
           >
-             <span className="mb-4 inline-block font-bold uppercase tracking-widest text-accent">Hospital Experience</span>
-            <h1 className="text-5xl font-extrabold tracking-tight text-white md:text-7xl">
+             <span className="mb-4 inline-block text-sm font-bold uppercase tracking-widest text-accent">Hospital Experience</span>
+            <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl">
               Healing Rooted in <br/><span className="text-secondary">Nature</span>
             </h1>
-            <p className="mt-6 text-xl text-gray-200">
+            <p className="mt-5 text-base text-gray-200 sm:mt-6 sm:text-xl">
               Our hospital combines pristine modern hygiene with centuries-old Ayurvedic therapeutic wisdom for ultimate rejuvenation.
             </p>
           </motion.div>
@@ -45,21 +45,21 @@ export default function Hospital() {
       </section>
 
       {/* Services Section */}
-      <section className="py-24">
+      <section className="py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:gap-10 lg:grid-cols-3 lg:gap-16">
             
             {/* Panchakarma */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="group flex flex-col rounded-3xl bg-gray-50 p-8 transition-colors hover:bg-primary"
+              className="group flex flex-col rounded-3xl bg-gray-50 p-6 transition-colors hover:bg-primary sm:p-8"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm group-hover:text-secondary group-hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
                 <Waves className="h-8 w-8" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-dark group-hover:text-white">Panchakarma</h3>
+              <h3 className="mb-4 text-xl font-bold text-dark group-hover:text-white sm:text-2xl">Panchakarma</h3>
               <p className="mb-8 text-gray-600 group-hover:text-white/80">
                 A five-fold detoxification process designed to clear deep-rooted stress and illness-causing toxins from your system. Experince deep purification.
               </p>
@@ -74,12 +74,12 @@ export default function Hospital() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.2 }}
-              className="group flex flex-col rounded-3xl bg-gray-50 p-8 transition-colors hover:bg-primary"
+              className="group flex flex-col rounded-3xl bg-gray-50 p-6 transition-colors hover:bg-primary sm:p-8"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm group-hover:text-secondary group-hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
                 <Activity className="h-8 w-8" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-dark group-hover:text-white">Nadi Pariksha</h3>
+              <h3 className="mb-4 text-xl font-bold text-dark group-hover:text-white sm:text-2xl">Nadi Pariksha</h3>
               <p className="mb-8 text-gray-600 group-hover:text-white/80">
                 Ancient pulse diagnosis method allows our expert doctors to accurately diagnose physical, mental, and emotional imbalances without invasive tests.
               </p>
@@ -94,12 +94,12 @@ export default function Hospital() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.4 }}
-              className="group flex flex-col rounded-3xl bg-gray-50 p-8 transition-colors hover:bg-primary"
+              className="group flex flex-col rounded-3xl bg-gray-50 p-6 transition-colors hover:bg-primary sm:p-8"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-primary shadow-sm group-hover:text-secondary group-hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
                 <Stethoscope className="h-8 w-8" />
               </div>
-              <h3 className="mb-4 text-2xl font-bold text-dark group-hover:text-white">Holistic Treatment</h3>
+              <h3 className="mb-4 text-xl font-bold text-dark group-hover:text-white sm:text-2xl">Holistic Treatment</h3>
               <p className="mb-8 text-gray-600 group-hover:text-white/80">
                 From herbal medicines grown in our own medicinal gardens to tailored diet and lifestyle plans, our treatments are customized for permanent healing.
               </p>
@@ -113,7 +113,7 @@ export default function Hospital() {
       </section>
 
       {/* Immersive Parallax Quote */}
-      <section className="relative flex h-[60vh] items-center justify-center overflow-hidden">
+      <section className="relative flex min-h-[18rem] items-center justify-center overflow-hidden sm:h-[60vh]">
         <motion.div 
           className="absolute inset-0 z-0 bg-primary"
         ></motion.div>
@@ -125,7 +125,7 @@ export default function Hospital() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-3xl font-light italic leading-relaxed md:text-5xl"
+            className="text-2xl font-light italic leading-relaxed sm:text-3xl md:text-5xl"
           >
             "Ayurveda teaches us to cherish our innate nature – to love and honor who we are."
           </motion.p>

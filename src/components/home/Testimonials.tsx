@@ -46,7 +46,7 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(145deg,rgba(15,175,59,0.08),rgba(255,255,255,1),rgba(139,195,74,0.1))] py-24 md:py-30">
+    <section className="relative overflow-hidden bg-[linear-gradient(145deg,rgba(15,175,59,0.08),rgba(255,255,255,1),rgba(139,195,74,0.1))] py-16 md:py-30">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_8%_25%,rgba(15,175,59,0.16),transparent_28%),radial-gradient(circle_at_92%_75%,rgba(139,195,74,0.2),transparent_30%)]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -54,7 +54,7 @@ export default function Testimonials() {
           <span className="inline-block rounded-full border border-primary/25 bg-primary/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-primary">
             Voices Of Trust
           </span>
-          <h2 className="mt-5 text-3xl font-bold text-dark md:text-5xl">
+          <h2 className="mt-5 text-2xl font-bold text-dark sm:text-3xl md:text-5xl">
             What Our <span className="text-primary">Students Say</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-dark/70 md:text-lg">
@@ -63,7 +63,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        <div className="relative rounded-[2.2rem] border border-primary/15 bg-white/75 p-6 shadow-[0_20px_50px_rgba(26,26,26,0.1)] backdrop-blur-sm md:p-10">
+        <div className="relative rounded-[1.8rem] border border-primary/15 bg-white/75 p-4 shadow-[0_20px_50px_rgba(26,26,26,0.1)] backdrop-blur-sm sm:p-6 md:rounded-[2.2rem] md:p-10">
           <Swiper
             slidesPerView={1}
             spaceBetween={24}
@@ -80,7 +80,7 @@ export default function Testimonials() {
           >
             {testimonials.map((item) => (
               <SwiperSlide key={item.name}>
-                <article className="h-full rounded-[1.8rem] border border-primary/15 bg-light p-6 shadow-[0_16px_36px_rgba(26,26,26,0.08)] md:p-8">
+                <article className="h-full rounded-[1.5rem] border border-primary/15 bg-light p-5 shadow-[0_16px_36px_rgba(26,26,26,0.08)] sm:p-6 md:rounded-[1.8rem] md:p-8">
                   <div className="mb-6 flex items-center justify-between gap-4">
                     <div>
                       <p className="text-base font-bold text-dark">{item.name}</p>

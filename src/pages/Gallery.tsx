@@ -23,24 +23,24 @@ export default function Gallery() {
   }, []);
 
   return (
-    <div className="bg-white min-h-screen pt-20">
+    <div className="min-h-screen bg-white pt-18 sm:pt-20">
       
       {/* Header */}
-      <section className="bg-primary py-24 text-center text-white px-4 relative overflow-hidden">
+      <section className="relative overflow-hidden bg-primary px-4 py-16 text-center text-white sm:py-24">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-20" />
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h1 className="text-5xl font-extrabold tracking-tight md:text-7xl">
+        <div className="relative z-10 mx-auto max-w-3xl">
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-5xl md:text-7xl">
             Visual Story<span className="text-accent">.</span>
           </h1>
-          <p className="mt-6 text-lg text-white/80">
+          <p className="mt-4 text-sm text-white/80 sm:mt-6 sm:text-lg">
             A glimpse into the life, infrastructure, and serene environment at Shri Krishna Ayurvedic Medical College & Hospital.
           </p>
         </div>
       </section>
 
       {/* Masonry Grid */}
-      <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <div className="columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+      <section className="mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-24 lg:px-8">
+        <div className="columns-1 gap-4 space-y-4 sm:columns-2 sm:gap-6 sm:space-y-6 md:columns-3">
           {galleryImages.map((src, idx) => (
             <motion.div
               key={idx}
@@ -48,7 +48,7 @@ export default function Gallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: (idx % 3) * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl cursor-pointer shadow-sm hover:shadow-xl transition-all break-inside-avoid"
+              className="group relative cursor-pointer break-inside-avoid overflow-hidden rounded-2xl shadow-sm transition-all hover:shadow-xl"
               onClick={() => setSelectedImage(src)}
             >
               <img 
@@ -57,8 +57,8 @@ export default function Gallery() {
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-colors duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                  <ZoomIn className="text-white w-10 h-10" />
+                <div className="translate-y-4 transform opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                  <ZoomIn className="h-8 w-8 text-white sm:h-10 sm:w-10" />
                 </div>
               </div>
             </motion.div>
@@ -73,13 +73,13 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-dark/95 backdrop-blur-sm p-4"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-dark/95 p-4 backdrop-blur-sm"
             onClick={() => setSelectedImage(null)}
           >
             <motion.button
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+              className="absolute top-4 right-4 text-white/50 transition-colors hover:text-white sm:top-6 sm:right-6"
               onClick={() => setSelectedImage(null)}
             >
               <X className="w-8 h-8" />
@@ -91,7 +91,7 @@ export default function Gallery() {
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               src={selectedImage}
               alt="Lightbox large view"
-              className="max-h-[90vh] max-w-[90vw] rounded-xl object-contain shadow-2xl ring-1 ring-white/10"
+              className="max-h-[82vh] max-w-[92vw] rounded-xl object-contain shadow-2xl ring-1 ring-white/10 sm:max-h-[90vh] sm:max-w-[90vw]"
               onClick={(e) => e.stopPropagation()} // Prevent closing when clicking the image
             />
           </motion.div>

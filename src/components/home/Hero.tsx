@@ -8,7 +8,7 @@ export default function Hero() {
   const opacityHero = useTransform(scrollY, [0, 500], [1, 0]);
 
   return (
-    <section className="relative -mt-20 flex min-h-dvh w-full items-center justify-center overflow-hidden bg-dark pb-12 pt-24 sm:mt-0 sm:min-h-192 sm:pt-20 lg:h-screen lg:min-h-150 lg:py-0">
+    <section className="relative -mt-20 flex min-h-dvh w-full items-center justify-center overflow-hidden bg-dark pb-12 pt-24 sm:mt-0 sm:min-h-192 sm:pt-20 lg:h-screen lg:min-h-150 lg:pt-0 lg:pb-12">
       {/* Parallax Background - Added -inset-2 to eliminate subpixel white line gaps */}
       <motion.div
         className="absolute -inset-2 z-0 bg-black"
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-5 max-w-2xl text-left text-base font-medium text-gray-200 sm:mt-6 sm:text-lg md:text-xl"
+          className="mt-6 max-w-2xl text-left text-base font-medium leading-relaxed text-gray-200 sm:mt-8 sm:text-lg md:text-xl"
         >
           Experience pure Ayurveda at our premium medical college and hospital.
           We cultivate tomorrow's leading doctors with holistic expertise and
@@ -79,11 +79,11 @@ export default function Hero() {
           </button>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
-          className="mt-10 grid w-full max-w-xl grid-cols-2 gap-3 sm:mt-12 md:grid-cols-3"
+          className="mt-12 grid w-full max-w-2xl grid-cols-2 gap-4 sm:mt-14 md:grid-cols-3 lg:mb-12"
         >
           {[
             { label: "NAAC Focused", value: "Premium Campus" },
@@ -92,7 +92,7 @@ export default function Hero() {
           ].map((item, idx) => (
             <div
               key={item.label}
-              className={`rounded-xl border border-white/20 bg-white/10 px-4 py-3.5 backdrop-blur-md ${
+              className={`flex flex-col justify-center rounded-xl border border-white/20 bg-white/10 px-5 py-4 backdrop-blur-md ${
                 idx === 2 ? "col-span-2 md:col-span-1" : ""
               }`}
             >
@@ -104,7 +104,7 @@ export default function Hero() {
               </p>
             </div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

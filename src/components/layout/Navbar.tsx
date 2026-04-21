@@ -79,7 +79,9 @@ const NavItem = ({ item }: { item: any }) => {
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState<number | null>(null);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<number | null>(
+    null,
+  );
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-primary/95 shadow-md backdrop-blur-md transition-all">
@@ -94,8 +96,12 @@ export default function Navbar() {
             />
           </div>
           <div className="hidden min-w-0 flex-col md:flex">
-            <span className="text-lg font-bold leading-tight text-white">Shri Krishna</span>
-            <span className="truncate text-xs font-medium text-accent">Ayurvedic Medical College & Hospital</span>
+            <span className="text-lg font-bold leading-tight text-white">
+              Shri Krishna
+            </span>
+            <span className="truncate text-xs font-medium text-accent">
+              Ayurvedic Medical College & Hospital
+            </span>
           </div>
         </Link>
 
@@ -117,7 +123,11 @@ export default function Navbar() {
               if (mobileMenuOpen) setOpenMobileDropdown(null);
             }}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
       </div>
@@ -158,11 +168,15 @@ export default function Navbar() {
                         aria-label={`Toggle ${item.name} submenu`}
                         className="mr-2 rounded-lg p-2 text-white/80 transition-colors hover:bg-white/10 hover:text-accent"
                         onClick={() =>
-                          setOpenMobileDropdown(openMobileDropdown === idx ? null : idx)
+                          setOpenMobileDropdown(
+                            openMobileDropdown === idx ? null : idx,
+                          )
                         }
                       >
                         <motion.span
-                          animate={{ rotate: openMobileDropdown === idx ? 180 : 0 }}
+                          animate={{
+                            rotate: openMobileDropdown === idx ? 180 : 0,
+                          }}
                           transition={{ duration: 0.2 }}
                           className="block"
                         >
@@ -188,7 +202,10 @@ export default function Navbar() {
                                 key={sIdx}
                                 initial={{ opacity: 0, x: -6 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.2, delay: sIdx * 0.04 }}
+                                transition={{
+                                  duration: 0.2,
+                                  delay: sIdx * 0.04,
+                                }}
                               >
                                 <Link
                                   to={subItem.href}

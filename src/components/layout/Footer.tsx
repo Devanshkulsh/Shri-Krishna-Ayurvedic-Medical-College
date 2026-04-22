@@ -31,7 +31,7 @@ export default function Footer() {
             <div className="mb-5 flex items-center gap-3 sm:mb-6">
               <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-white shadow-inner">
                 <img
-                  src="/logo.png"
+                  src="/logo3.png"
                   alt="Shri Krishna logo"
                   className="h-full w-full rounded-full object-cover"
                 />
@@ -110,7 +110,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-secondary" />
-                <span>+91 9015235517</span>
+                <span>+919250625541</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-secondary" />
@@ -127,7 +127,7 @@ export default function Footer() {
               Start your BAMS journey and connect with us on social media.
             </p>
             <Link
-              to="/contact"
+              to="/admissions"
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-secondary"
             >
               Apply Now

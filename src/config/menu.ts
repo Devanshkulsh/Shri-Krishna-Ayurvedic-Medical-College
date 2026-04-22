@@ -38,12 +38,12 @@ export const navigationMenu = [
     name: "Student Corner",
     href: "/student-corner",
     dropdown: [
-      { name: "Rules & Regulation", href: "/student-corner#rules" },
-      { name: "Eligibility & Fee", href: "/student-corner#eligibility" },
-      { name: "List of Student", href: "/student-corner#students" },
-      { name: "Monthly Attendance", href: "/student-corner#attendance" },
-      { name: "Result", href: "/student-corner#result" },
-      { name: "Important Materials", href: "/student-corner#materials" },
+      { name: "Rules & Regulation", href: "/student-corner-rules" },
+      { name: "Eligibility & Fee", href: "/student-corner-feeandeligibility" },
+      { name: "List of Student", href: "/student-corner-studentsList" },
+      { name: "Monthly Attendance", href: "/student-corner-monthlyAttendance" },
+      { name: "Result", href: "/student-corner-result" },
+      { name: "Important Materials", href: "/student-corner-importantMaterials" },
     ],
   },
   {
@@ -52,11 +52,59 @@ export const navigationMenu = [
     dropdown: [
       { name: "Facilities", href: "/college-hostel" },
       { name: "Infrastructure", href: "/college-infrastructure" },
+      { name: "Opportunities", href: "/college-opportunities" },
+      { name: "Uniform", href: "/college-uniform" },
     ],
   },
-  { name: "Message", href: "/message" },
+  {
+    name: "Message",
+    href: "/message",
+    dropdown: [
+      { name: "Chairman's Desk", href: "/message-chairman-desk" },
+      { name: "Co-Chairperson's Desk", href: "/message-cochairperson-desk" },
+      { name: "Principal's Desk", href: "/message-principal-desk" },
+    ],
+  },
   { name: "Ayurveda", href: "/ayurveda" },
   { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
-  { name: "Hospital", href: "/hospital" },
+  {
+    name: "Hospital",
+    href: "/hospital",
+    dropdown: [
+      { name: "Infrastructure", href: "/hospital-infrastructure" },
+      {
+        name: "Department wise Clinical Material and Facilities",
+        href: "/hospital-department-wise-clinical-material-and-facilities",
+      },
+      {
+        name: "Department wise Clinical Material and Facilitie Charges",
+        href: "/hospital-department-wise-clinical-material-and-facilitie-charges",
+      },
+      {
+        name: "Monthly Attendance of OPD Patients",
+        href: "/hospital-monthly-attendance-opd-patients",
+      },
+      {
+        name: "Monthly Attendance of IPD Patients",
+        href: "/hospital-monthly-attendance-ipd-patients",
+      },
+      {
+        name: "Monthly Attendance of OT & Labour Room Section",
+        href: "/hospital-monthly-attendance-ot-labour-room-section",
+      },
+      {
+        name: "Monthly Attendance of Panchkarma Section",
+        href: "/hospital-monthly-attendance-panchkarma-section",
+      },
+      {
+        name: "Monthly Attendance of Pathology Section",
+        href: "/hospital-monthly-attendance-pathology-section",
+      },
+      {
+        name: "Monthly Attendance of X-Ray/USG Section",
+        href: "/hospital-monthly-attendance-xray-usg-section",
+      },
+    ],
+  },
 ];

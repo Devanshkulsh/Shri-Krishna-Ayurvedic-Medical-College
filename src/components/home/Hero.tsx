@@ -6,6 +6,10 @@ export default function Hero() {
   const { scrollY } = useScroll();
   const yHero = useTransform(scrollY, [0, 1000], [0, 300]);
   const opacityHero = useTransform(scrollY, [0, 500], [1, 0]);
+  const whatsappNumber = "919250625541";
+  const whatsappMessage =
+    "Hi, I am interested in counselling for BAMS admission at Shri Krishna Ayurvedic Medical College. Please share details.";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   return (
     <section className="relative -mt-20 flex min-h-dvh w-full items-center justify-center overflow-hidden bg-dark pb-12 pt-24 sm:mt-0 sm:min-h-192 sm:pt-20 lg:h-screen lg:min-h-150 lg:pt-0 lg:pb-12">
@@ -26,7 +30,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Hero Content */}
-      <div className="relative z-20 mx-auto flex w-full max-w-7xl flex-col px-4 sm:px-6 lg:px-8">
+      <div className="relative z-20 mx-auto flex w-full max-w-[92rem] flex-col px-4 sm:px-6 lg:px-6 xl:px-8">
         {/* <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -74,9 +78,14 @@ export default function Hero() {
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </span>
           </button>
-          <button className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white/30 bg-white/10 px-6 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:w-auto sm:px-8">
+          <a
+            href={whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-white/30 bg-white/10 px-6 py-4 text-base font-bold text-white backdrop-blur-md transition-all hover:bg-white/20 sm:w-auto sm:px-8"
+          >
             Book Counselling
-          </button>
+          </a>
         </motion.div>
 
         {/* <motion.div

@@ -5,7 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { navigationMenu } from "../../config/menu";
 
 // A single NavItem with MegaMenu support
-const NavItem = ({ item }: { item: any }) => {
+const NavItem = ({
+  item,
+  alignRight = false,
+}: {
+  item: any;
+  alignRight?: boolean;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const timeoutRef = useRef<number | null>(null);
 
@@ -28,7 +34,7 @@ const NavItem = ({ item }: { item: any }) => {
     >
       <Link
         to={item.href}
-        className="group flex items-center gap-1 px-3 py-2 text-sm font-medium text-white transition-colors hover:text-accent"
+        className="group flex items-center gap-1 px-2 py-2 text-[13px] font-medium text-white transition-colors hover:text-accent xl:px-3 xl:text-sm"
       >
         {item.name}
         {item.dropdown && (
@@ -50,7 +56,11 @@ const NavItem = ({ item }: { item: any }) => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.95 }}
               transition={{ duration: 0.24, ease: "easeOut" }}
-              className="absolute left-0 top-full z-50 mt-2 min-w-75 origin-top-left overflow-hidden rounded-2xl border border-white/20 bg-linear-to-b from-secondary/95 to-primary/90 p-3 shadow-2xl backdrop-blur-xl"
+              className={`absolute top-full z-50 mt-2 w-[min(22rem,calc(100vw-2rem))] origin-top overflow-hidden rounded-2xl border border-white/20 bg-linear-to-b from-secondary/95 to-primary/90 p-3 shadow-2xl backdrop-blur-xl ${
+                alignRight
+                  ? "right-0 origin-top-right"
+                  : "left-0 origin-top-left"
+              }`}
             >
               <ul className="space-y-1">
                 {item.dropdown.map((subItem: any, idx: number) => (
@@ -62,7 +72,7 @@ const NavItem = ({ item }: { item: any }) => {
                   >
                     <Link
                       to={subItem.href}
-                      className="block rounded-xl border border-transparent px-4 py-2.5 text-sm font-medium text-white transition-all hover:border-white/20 hover:bg-white/10 hover:pl-6"
+                      className="block whitespace-normal wrap-break-words rounded-xl border border-transparent px-4 py-2.5 text-sm font-medium text-white transition-all hover:border-white/20 hover:bg-white/10 hover:pl-6"
                     >
                       {subItem.name}
                     </Link>
@@ -85,12 +95,12 @@ export default function Navbar() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-primary/95 shadow-md backdrop-blur-md transition-all">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-18 max-w-400 items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8">
         {/* Logo Section */}
         <Link to="/" className="flex min-w-0 items-center gap-3">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-white shadow-inner sm:h-12 sm:w-12">
             <img
-              src="/logo.png"
+              src="/logo3.png"
               alt="Shri Krishna logo"
               width="48"
               height="48"
@@ -110,12 +120,24 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden h-full items-center whitespace-nowrap lg:flex">
-          {navigationMenu.map((item, idx) => (
-            <NavItem key={idx} item={item} />
-          ))}
-        </nav>
+        {/* Desktop Navigation + CTA */}
+        <div className="hidden lg:ml-4 lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-2 xl:gap-3">
+          <nav className="flex h-full min-w-0 items-center whitespace-nowrap">
+            {navigationMenu.map((item, idx) => (
+              <NavItem
+                key={idx}
+                item={item}
+                alignRight={idx >= navigationMenu.length - 2}
+              />
+            ))}
+          </nav>
+          <Link
+            to="/admissions"
+            className="inline-flex min-h-10 shrink-0 items-center justify-center rounded-full border border-white/25 bg-accent px-4 py-2 text-xs font-bold text-dark transition-all hover:-translate-y-0.5 hover:bg-white xl:px-5 xl:text-sm"
+          >
+            Apply Now
+          </Link>
+        </div>
 
         {/* Mobile menu button */}
         <div className="flex lg:hidden">
@@ -235,6 +257,20 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Mobile Floating Apply Now */}
+      <div className="fixed right-0 top-[50vh] z-60 h-0 w-0 lg:hidden">
+        <Link
+          to="/admissions"
+          className="absolute bottom-0 right-0 flex whitespace-nowrap items-center justify-center rounded-t-xl bg-accent px-5 py-2.5 text-sm font-bold tracking-wide text-dark shadow-[0_-4px_12px_rgba(0,0,0,0.15)] transition-all hover:bg-white"
+          style={{
+            transformOrigin: "bottom right",
+            transform: "rotate(-90deg) translateX(50%)",
+          }}
+        >
+          Apply Now
+        </Link>
+      </div>
     </header>
   );
 }

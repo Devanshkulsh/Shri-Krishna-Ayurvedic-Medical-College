@@ -2,7 +2,7 @@ import { Clock3, Mail, MapPin, Phone } from "lucide-react";
 
 const contact = {
   address: "Raunakhurda, Cholapur, Varanasi, Uttar Pradesh 221101",
-  phone: "+91 9015235517",
+  phone: "+919250625541",
   email: "shrikrishnaamc@gmail.com",
   hours: "Mon - Sat: 10:00 AM - 5:00 PM",
   mapSrc: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.3221125285986!2d83.02961766242548!3d25.46091752744851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e29ed3fffffff%3A0x2e23e9a02e4ad4bc!2sShri%20Krishna%20Ayurvedic%20Medical%20College%20%26%20Hospital%20-%20Best%20NEET%20Ayurvedic%20Medical%20College%20BAMS!5e0!3m2!1sen!2sin!4v1776760664478!5m2!1sen!2sin",

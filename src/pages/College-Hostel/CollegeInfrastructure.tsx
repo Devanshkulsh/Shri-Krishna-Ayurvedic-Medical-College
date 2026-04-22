@@ -9,6 +9,11 @@ type InfraSection = {
   rows: InfraRow[];
 };
 
+type InfraPhoto = {
+  title: string;
+  image: string;
+};
+
 const introParagraphs = [
   "Shri Krishna Ayurvedic Medical College is associated with a 60 bedded hospital with all required equipment and facilities. The campus has engaged a specialist doctor for medical aid 24x7. We also have arrangement with the nearby Shiv Surgical Nursing Homes (100 Bedded Modern Hospital)with all Modern facilities for emergencies treatment.",
   "A dedicated room has been provided in the campus with first aid facilities which functions as health center if and when immediate medical attention is required. Necessary treatment is provided at this center by trained persons.",
@@ -158,7 +163,11 @@ const infraSections: InfraSection[] = [
         name: "Attached toilet shall be there for collection of urine samples",
         area: "5",
       },
-      { sno: "3", name: "Other diagnostic tools for ECG or TMT etc", area: "20" },
+      {
+        sno: "3",
+        name: "Other diagnostic tools for ECG or TMT etc",
+        area: "20",
+      },
     ],
   },
   {
@@ -195,6 +204,13 @@ const infraSections: InfraSection[] = [
   },
 ];
 
+const infraPhotos: InfraPhoto[] = [
+  { title: "Hospital Block", image: "/facilities/clinical-facilities.webp" },
+  { title: "Panchakarma Unit", image: "/facilities/panchkarma.webp" },
+  { title: "Laboratory", image: "/facilities/labs.webp" },
+  { title: "Pharmacy", image: "/facilities/pharmacy.webp" },
+];
+
 export default function CollegeInfrastructure() {
   return (
     <section className="relative overflow-hidden px-4 py-16 md:py-20">
@@ -222,6 +238,32 @@ export default function CollegeInfrastructure() {
           ))}
         </div>
 
+        <div className="mt-10">
+          <h2 className="text-xl font-bold text-dark md:text-2xl">
+            Infrastructure Highlights
+          </h2>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {infraPhotos.map((photo) => (
+              <figure
+                key={photo.title}
+                className="group overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-[0_10px_26px_rgba(26,26,26,0.08)]"
+              >
+                <div className="h-44 overflow-hidden bg-primary/5">
+                  <img
+                    src={photo.image}
+                    alt={photo.title}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <figcaption className="px-4 py-3 text-sm font-semibold text-dark/85">
+                  {photo.title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+
         <div className="mt-10 space-y-8">
           {infraSections.map((section) => (
             <article
@@ -234,7 +276,7 @@ export default function CollegeInfrastructure() {
                 </h2>
               </div>
               <div className="overflow-x-auto">
-                <table className="w-full min-w-[820px] border-collapse">
+                <table className="w-full min-w-205 border-collapse">
                   <thead>
                     <tr>
                       <th className="border-b border-dark/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-dark">
@@ -275,4 +317,3 @@ export default function CollegeInfrastructure() {
     </section>
   );
 }
-

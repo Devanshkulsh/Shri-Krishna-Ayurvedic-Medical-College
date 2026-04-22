@@ -451,7 +451,7 @@ export default function NonTeachingStaff() {
 
         <div className="mt-10 overflow-hidden rounded-2xl border border-dark/10 bg-white">
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[980px] border-collapse">
+            <table className="w-full min-w-245 border-collapse">
               <thead className="bg-primary/10">
                 <tr>
                   <th className="border-b border-dark/10 px-4 py-3 text-left text-xs font-bold uppercase tracking-[0.14em] text-dark">

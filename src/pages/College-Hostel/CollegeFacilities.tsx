@@ -67,8 +67,7 @@ const facilityItems: FacilityItem[] = [
   },
   {
     title: "X-ray, ECG, USG",
-    description:
-      "X-ray, ECG, USG facilities also available in the hospital.",
+    description: "X-ray, ECG, USG facilities also available in the hospital.",
     image: "/facilities/clinical-facilities.webp",
   },
   {

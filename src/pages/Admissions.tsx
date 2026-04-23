@@ -42,8 +42,8 @@ export default function Admissions() {
             {!formLoaded ? (
               <div className="mx-6 mt-4 rounded-lg border border-accent/40 bg-accent/15 px-4 py-2">
                 <p className="text-xs text-dark/75 sm:text-sm">
-                  If the admission form does not appear below, please reload
-                  the page.
+                  If the admission form does not appear below, please reload the
+                  page.
                 </p>
               </div>
             ) : null}
@@ -52,11 +52,6 @@ export default function Admissions() {
               <div id="formsID7375" />
             </div>
           </div>
-
-          <p className="mt-6 text-center text-xs text-dark/60">
-            By submitting this form, you agree to be contacted by the admission
-            team of Shri Krishna Ayurvedic Medical College.
-          </p>
         </div>
       </div>
     </section>

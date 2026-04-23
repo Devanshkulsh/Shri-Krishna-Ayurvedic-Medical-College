@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BookOpen, GraduationCap, Stethoscope } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const course = {
   code: "BAMS",
@@ -97,6 +98,13 @@ export default function CourseSection() {
                     </p>
                   </div>
                 </div>
+
+                <Link
+                  to="/admissions"
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-accent px-5 py-3 text-sm font-bold text-dark transition-all hover:-translate-y-0.5 hover:bg-white sm:mt-6"
+                >
+                  Apply Now
+                </Link>
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import DeferredVideo from "../shared/DeferredVideo";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   const { scrollY } = useScroll();
@@ -30,7 +31,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Hero Content */}
-      <div className="relative z-20 mx-auto flex w-full max-w-[92rem] flex-col px-4 sm:px-6 lg:px-6 xl:px-8">
+      <div className="relative z-20 mx-auto flex w-full max-w-368 flex-col px-4 sm:px-6 lg:px-6 xl:px-8">
         {/* <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -73,10 +74,10 @@ export default function Hero() {
           className="mt-8 flex w-full flex-col items-stretch gap-3 sm:mt-10 sm:w-auto sm:flex-row sm:items-center sm:gap-4"
         >
           <button className="group relative inline-flex w-full items-center justify-center overflow-hidden rounded-full border border-transparent bg-primary px-6 py-4 text-base font-bold text-white transition-all hover:scale-105 hover:bg-white hover:text-primary hover:shadow-[0_0_20px_rgba(15,175,59,0.5)] sm:w-auto sm:px-8">
-            <span className="relative z-10 flex items-center gap-2">
+            <Link to="/admissions" className="relative z-10 flex items-center gap-2">
               Apply Now{" "}
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </span>
+            </Link>
           </button>
           <a
             href={whatsappLink}

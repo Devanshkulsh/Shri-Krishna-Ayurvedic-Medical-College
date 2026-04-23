@@ -64,7 +64,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/about"
+                  to="/aboutintro"
                   className="transition-colors hover:text-secondary hover:underline"
                 >
                   About Us
@@ -72,7 +72,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/hospital"
+                  to="/hospital-infrastructure"
                   className="transition-colors hover:text-secondary hover:underline"
                 >
                   Hospital
@@ -80,10 +80,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/ayurveda"
+                  to="/gallery"
                   className="transition-colors hover:text-secondary hover:underline"
                 >
-                  Ayurveda
+                  Gallery
                 </Link>
               </li>
               <li>
@@ -104,17 +104,32 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 shrink-0 text-secondary" />
-                <span className="leading-relaxed">
+                <a
+                  href="https://maps.google.com/?q=Raunakhurda,+Cholapur,+Varanasi,+Uttar+Pradesh+221101"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="leading-relaxed transition-colors hover:text-secondary"
+                >
                   Raunakhurda, Cholapur, Varanasi, Uttar Pradesh 221101
-                </span>
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 shrink-0 text-secondary" />
-                <span>+919250625541</span>
+                <a
+                  href="tel:+919250625541"
+                  className="transition-colors hover:text-secondary"
+                >
+                  +919250625541
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0 text-secondary" />
-                <span>shrikrishnaamc@gmail.com</span>
+                <a
+                  href="mailto:shrikrishnaamc@gmail.com"
+                  className="transition-colors hover:text-secondary"
+                >
+                  shrikrishnaamc@gmail.com
+                </a>
               </li>
             </ul>
           </div>
